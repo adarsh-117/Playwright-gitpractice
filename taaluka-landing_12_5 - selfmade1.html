@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+<title>Taaluka — आपल्या तालुक्याचे आपले ॲप</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC40lEQVRYhc2XT2gUVxzHP9+3GY0imxALbS+BHkwPG9ZZF7S2pXgo5FDovV5ED6WolILai1iEeBIp3uwxSKGFXnop7XEooSWWdONIlEVtexBK0UqjRtPs7Pv10GU1M5vZzR+3/cLA7O+99/1+3/fNm30D/zG0WUS+UvkOs10tVg80hCZVq32RN26gF3KrVreTJPuQyl4aBXtZaASs8EyvNxDbVpiCty0M7+HcrxSLvymKkjT3qgnY/v3bWHr8npkOI/YBQS9mc7AM3AK7YVLdea4jTWcMWLUa0GyeNHEC2LlB0VxI9sGKJbDx8RfNJ18jvfY8hZ+icLWdgJVKO2xLMA3s7o84Xk1fbCfgg+CS8sRF3Tw/OGkeuIv8fbzu49zfAGb+K+CV1KirGEuIXcBIiu+m4nhxAMDCMDRxsINsYjDlmv6C4rieO51KuJTxLKZUm7sIYHv37qTRGMNszDvGnOcvaG1DLzsi5FLjF+T8hJuNZ/KEe4WuXPkT+LF1teEAhCY6uP9YmySeB2f/mkivnSfY+uXzFgdwhGGR9EvGWNTMzIP+GGg0HmeqsqCVzMbgsa4GND+/DCykHAwShqMbNtADWrNUnGmR3uqbAZNlnnZv9k7fDDjPN+kGyd61MBzuiwGGh6eBP1IWBnG83xcDiqLExOV0oxmnrFTasW52qfsuaN8Ump8B6RPLC2wZWH8KZl2PfG0D+unaLyY+z3DQcwpdZ5trAMCpcI5MCnrJbw0+WQ/5mpYAQLOztzulIOMjK5fH88XwmdpalqBdSPwZ4FGqHJhzl2ytx/i1JgCgOL4jMZkl4032hEdXZbLuYj0ZAKA4/CnoWkbDOG/l8qurONg8A4qiRHAcMuu63Qrush040OmDZhMTAFSrfW/oYqqcmPiWKMo+cOtE7n++Gxo6DVxv/bwl4/XCz3NnlU2m8y7oAbnfhoqiJatUDnnZMbf45EPV6w9X7Wz8jjGUKi507vw/wj+ooftb0RAF6AAAAABJRU5ErkJggg=="/>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABmJLR0QA/wD/AP+gvaeTAAARTUlEQVR4nO3df3Bc1XXA8e+5KwvjgGUCIQbCFLn+0SBb2tUaB0KTOj9ofhCaDKkbJikJDQlDWspAXJIh7UxNfpAJSYHAtJ1A6BSaNJmIMO3QTDNDSNUUQ4Oz2tXaMtgyiF+BpOBfYMBY2nv6h2Ujy7vS7tt99+57up8ZMeOV/M7R+nD2vvveuxeCIAiCIAiCIAiCIAjSQHwnEFSn/X1XgyxAdWLmnzSvIrq/oYNbOhA9/qjXRbfKUPneho7VZjp8JxBUpyqXA8tn7zkK2uDB5fB/pse8C0h0QRvfCQQ1zXMfUmb5NGh/oaDblrj/9BStOI/ZYqGg25YecB+S0KGD2LzmPKJincdssXBSGIHm8wswZiEHDiwkkzke1RMQuxArx2M45uAP6QkHf9ocY2HBUQcR3W9UX60ZA06IJ/sZiDR6etl2QkFPoUuXHkNXVzc6vgzkVGtlMYaTBU5FORllMcJitZUF2AoYAZ1saioHJw4Ol8ShWQStPk+hNb/jkU18QbfbO+qEZrNnYHQlsMyqLBNYCiwDTgcyfrPzSX8qKjdizDNMTDwl5fLLvjNqVOoLWs9aeTrjHXkLq0VkNWgeOMl3XgmxG3gKeEKVMSMyhlTGmGAMGGvHgk9VQeu6dRl27Mih+i41/AHKauDNvvNKseeBMUUfB7PDwHZMZTv7K6MyMrLLR0KJL2jN50+hUjlfDeejrAUW+c4pAGAnsF1huxFGQUexsh1rR+Ps7IksaM1mlyH6MUU+DORJ6O8xh/0aYbtaRg2MYuw2MjrCps1PCM1NHSamEDSXOxXRP1WVj4H2+84niMXLwCMqbDGWrRizGZGtUig8Ve8B2rqgFQy53LtV9DKUj+Dl/oagDbwIjCq61cAIolsnO/qYTLs1qy0LWvP5LiqVy1S4EniL73yCtrUL2CLIeikWfwVtdmFF+/pOsyLrtVL5DMLR9+sGwZHeCLwTkcMnmW3RoXXNmhPt+Pg1gl4JHOs7nyBRXpZiaeGhk0mvHVrz+QVWK1/Q8QPrBY7zmUuQVLp56syIt4LW/t4L1FZuETjDVw5B8qnI0NQ/Oy9o7e3t1oy5TZX3uo4dpI+xlI74s8vgmst9Uo0ZhlDMQYuIFKf+0UmH1t7ekzUjdyr6/vY4DQ1SYoKuri1TX4i9oDWXW63o3cDvxB0rmGvkERkcPGIJh1iHHNrfd4WiGwnFHMRAsaXpr8VS0ApS6c9+U1VuBTrjiBEERqU8/bWWDzm0p6fTdnbcKcpFrT52EBxB9aiCbmmH1rVr52vnvJ8IEoo5iF9Hx+bpL7WsoHXduozu3f09wpRc4MbzUig8N/3FlhS0gtjR0dtBPtqK4wVBHYarvdiSgrbZ7N+J8GetOFYQ1EM5+oQQWlDQ2p/9gghXN3ucIGiEEbul6uvNHFT7+89W5avNHCMIIhFt7ZBD8/mTVO0A4bGowL0KnW94pNo3Is1DK4jayp3M9cejlJcQdiHsR9kH7APZj+iLqrwCsh/Yc/Bn9VVT50r7FukSuAw4Mb7kE22bPPRQ1XUBo11YyeX+EvSDTaXU3g4Aj4E+qSJPG5WngSeBZxH5P1Rf4KWXdsqOHbGtEGr7sxeioaCr0RozHBChoPWssxbrxPiXm0upbVjgEYVfGWUEYx/FmkdZtGhMBgf9rpWsXpY6rnDwPWnrYaQRjrqH45CGC9pOjH9DoKu5lLx5ERgU5X8Q2cQrrwzJtm0v+U6qBh832m6XrkW97Np1Oh10Y80Sa+hGdYmodCMsAd7kIa9pqp8QQoMFrdnsuQoXN5+QMxblQRG5D9WfsWjRw947b/283Dk++f6MTX79fPr3tafnOI45ZgnWLsFot1WzRES7UZaAdoPMjz3JA5XmO7SCqOHWNlzUeDoLslFgAGPurnZ5NBEUacd3WkZG9gHlya+jaC53KqrLMSy3qssFsxx0BdBNa4Yyz8mWLb+t9c36O3R/74dQci1IKC7bRfkuIt+XYvFZ38k0rS3LeXaT7/2zwODU1zWfn8fERDcZXQHmrVbpEWQl2DMb6+q1hxvQSIfWzDWNb4jngPBfonI9xeL905eFSrhEFnQtUiiMA9snvw7vhajr1mUYHV2C0VWo6bGqK0VYycEF6I/q6KpSdf75kLoKWnO5cxR9R0O/QfweFOUaKZYe9J1ITHzMcjhvCDIwUAFGJ7/uOZxIPj+P8fEVdMiZVlkpcCbQY8SMzXS8+gpa9Zo26hfPinIVpdLdKevI00i6f71ZTHb0LZNfP6r3783aBfSslacjfLiJ3FpGkX8SpUdKpYH0/2tr+7SQBJm9Q493XIR4389wnyCfNcXiDz3n4ZLv9zyRZi1oFf7ERSIzeEasvl+GSyOe8wgSYMYuoP39S4HVjnKp5jFR3iHDw3OxmMOQI4KZO7RWLvL4vv5WKvY8KZef8JWAZyk/R4jHzB0a+YCrRKZ5TZQLpFyecYom5UJBR1CzoPWcc47l4A5TzonotVIqbfIRe45L/P9EtTv0/v1rYHIjdpeUBxga/rbzuG1HmtrebK6aacjxTmdZvE5F5Opm96oL5q7aQw7R33eZCADC3Yd2Mwo08R//PtTu0Kq9DvMAQCw3u44ZpEvVgtYVK44Hcbzpu2yWUmpvNIoiDLsiqN6h589fiuMJaFX9sct4QRWS1lkOkaWO88Bk7L2z/9Qcoh46dPs/jTSrWmPoZU6zgH0sWTHjkwhzTgq6pQ9VC9qKLnacx9Dkjd7B60JBR1CjQ8tCl0koutVlvKCGFHwqVC1oEbfrbhhMMp/MDtpO9Q6tbjs0qqGgg5aoMeRQtwVt7G+cxgtSq9YY2u1NSZqpupJkEDSq1rTduNMsxGacxguqU0nnSSGqbgvaipM9x4P0q3Wl8IDjPEJBtwNJ/tIJ7THkMPpGp/GC6lI75KC+rRNaR051Gy+oKq0dWpWay5XGwSqnuYwX1JDaDi04nRcWQkEHrVG1oA3i+EKHLncbL0irGh3a9ZU7Wapr18a/lUGQerVOCl3fW9HB7t1vdRwzSKHqBV2Rxx3nAcasdB4zSJ3qt48OD/8a2OsyESt6tst4QTXJXzphpoVmtjnLAhDlXJfxgnSqvdAMzLg5SwxWaT6f1A09gzZRs6AN6rqgDarnOI4ZpMwMKyfJZod5AGCx7bbTVpAwtQu6s/OXOH7yWMDXetRBStQsaHn44Z3ADoe5gJLVvr5wGTyIbJYV/PV/XSUySRBvuwYEKTBjQRsV1wWNGs53HTM4LNXz0KD6kKM8psTkvZrPL3AeN4AU7Lw1c0EvX14GdrlJ5bDjqFRCl/Yj3R1aBgYqCPe7SuYQFbnIdcwgHWbdflcs97lI5Ej2g+GqYRDF7PtJW/ufDvKYRuZTqXzEfdwg6Wbv0OXyM6CPukhmKhU+4TpmkHyzd2hAVX4adyJVvEd7e7s9xA0SrK6CNsbeE3ci1cJaYy71EDdIsLoKmqHyRsD5krcieqnm8/Ncx53D0j1td4iAVfi3uJOpEnkx1oZL4UHd6uvQgEG8bLum2M/5iDtHpfxK4VRdXf8NvBBfKrXI+zSf/z33cYMkqrugZXBwQmEgzmRqhba2cqWHuHPR3BhDH/5hY++MK5GZCHxK16w50UfsIFkaKmgplH/p4yILsIDx1z7jIW6QMA0VNICo3BVHIrNR5Art6en0ETtIjoYLGtW7AB+7vr6Fzs6LPcQNEqTxDn1wVaWfx5DLrBT9oq5bFzYYCmpqvEMDIvqPrU6kTst4bPsfe4qdfmndGnlWC0+4F3imtanUR1Wu1RRcAAjiEa1DDw5OCHJ7q5OpUx+53AWeYqebJr9RROvQAMbcjuvdsiYpfFWbyT2obs4OOQApFJ4D/r2FuTRAV5HLXegndtDOmupyotzcqkQapeiG0KWD6Zor6FJpI+5XVzqkh2w2zU+HJ34860PTHU5UbmxFIlGosCE8ABBM1fxH9rJl9wCPNZ9KtOhUKp/1FDtuYTgVQfMdemCgIsqtrUgmChU26NvettBX/FRJ7U6yjRofvwPY2ZJjNe5N9sD+9Z5ip0ta9/pulIyM7BPkllYcK1J8ZL3m86f4ih8T98UVOvQUqrfgeCu4Kd5gbeXLnmKnR+jQr5NSaY8Kf9+q4zUcHz6tfX1rfMWPQejQEbT0TNp0dN4I7GvlMRsJr0ZuTtGNS2n5PZxqaUHLww/vVMHXraUA55DLhYcA5rCWz3Wa8crXgd2tPm69FL0hHUvxSujQEbS8oGXz5t2Cert6CLzZVipf8hg/8Cieq1EVvQn0N7Ecuw4iXKW9vSt8xW+N5M84+BBLQUu5/LIIX4vj2HXq1IzxdvWyRTwUtIZZjpqk4zv4u8cD4Dzt7/uQx/iBB7EVtBQK46L8bVzHr4eq3Kxr1873mUMTwpAjgnjv6CqVfgAMxxpjZr9r9+z5osf4CZP8mZVYC1rAivLXccaYNQfhS5rLnekzh4jCGDqC2O+5lVLpJ8Bg3HFm0KnYO8LjWnODk39kUf7GRZwZMjib/r60PggQTOGmoEuljar8yEWsWlTlBu3rO81nDo0J89BROPsYNtauB152Fa+KhWr4tsf4DUr+CZoPzgpayuVnBLnBVbwaWXxUs9mk7FDro6DDSWFDurpuAMacxpxGhX/QbHaRzxyC+DgtaBkc3C/INS5jVnGKNV4vy7ezxA9znE9lSbH4Y9D7Xcc9Igflcs1mz/WZw+zU+s4gibzMzQrmSjwt9DjJKNylPT3HecxhFl4ehwpj6CikWNyqeFs0fTIJltjOjuu95jAzH9t+JJ63q2dmwm4AnvcVH0CQKzSbPc9nDjMIQ44IvBW0bN68W8T3FUREhe/oihXHe86jmtChI/B7f8NQ6bvARq85QLddsOCbnnOoJnToCLwWtICVir0cvyeICHqZ5nIf8JlDFT4KOpwUNkvK5S0K3/KdhqK366pVJ3jO43USOnQU3gsawMw/9iv4fVwL4DQ7L+PzafUjaRhDR9EWBS0PPfSqKJ/znodyieZyf+Q7j4PER0GHK4WtIqXSfSp833ceit7RHiuZerlSGMbQrWQkcxXwguc0TlKt/LP3NfLCGDqStipoKRReEOVa33mg/CH9fX/hOYdQ0BG0VUEDUCrdAfzCdxqTT7j0eEwhnBRG0HYFLaBSsZfg9+kWgGM1Iz/0t65HuNsuirYraAApl8cE8bpIDQDKSvvinq/4CS6hoCNoy4IGoFi8CeUB32mI8nnN5d7jIbKPIUeY5YiLgBVjLgPd7zkVo+jn3Yf1MuQI89BxkqGhRwRznccUVJXbxGTWOY/sZ9ou8R26w3cCs+rq+hZ791wInOU48vMi+mlTHP4Px3EPCpe+I2nrDg0gg4MTIuZTjocePxMkK0OeihnChZWI2r6g4fDQw8XjUuMqXCfF0vukWHzWQbzaNEzbRZGIggagq+vrQCG24wvbxNizM0OlDdION9eLl1mOxEtMQcvg4IQglxLDwwCK/ou8Nr5aCuWhVh87Mg3z0FEkpqABpFgcFqSVFzr2CvLxTHH4kzIy4mvD0BrCkCOKRBU0AEuXXt+iCy6/kI6JVVIs/qAFx4pBGHJEkbiCloGBisyb+DjRN/ecUOE6Wbrs3bJpy9OtzC3xNPnz0IkraADZtOVpEb0ywl99Uoy+KzNU2iADA23eAW3ii8uHRBY0gAwNf0/hX+v/CwzIRCUnhWHv94fUx8tSYInX/lcKZ2BM5s/VVt4OnFHzh5SXxPBXMlS6zVlirSBpGAC4l9gODSCFwl4xejG1b4bfJMb0J66YAbWhnKNIdEEDSGH4ARW+Me3liipfk65Fb5ehoR1eEmuWhGm7KBI95DjESGaDauU8Dt7A9JQgF5tS0ftjXIF7qShoKRTGNZv9hBpuEslcIoWC7yfHmyfyOEoBZK+jiyzHqpDMT7MgCIIgCIIgCIIgCILU+X80b0lKPWgWlwAAAABJRU5ErkJggg=="/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Devanagari:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  section, nav, footer, header {
+    max-width: 100%;
+  }
+
+  :root {
+    --red: #E32350;
+    --red-dark: #B51B3F;
+    --red-light: #FF4D77;
+    --ink: #232323;
+    --ink-90: rgba(35,35,35,0.9);
+    --ink-60: rgba(35,35,35,0.6);
+    --ink-20: rgba(35,35,35,0.12);
+    --cream: #FBF8F3;
+    --white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* ── DARK MODE ── */
+  html.dark {
+    --ink: #F0EDE8;
+    --ink-90: rgba(240,237,232,0.9);
+    --ink-60: rgba(240,237,232,0.55);
+    --ink-20: rgba(240,237,232,0.1);
+    --cream: #141414;
+    --white: #1E1E1E;
+  }
+  html.dark body { background: var(--cream); color: var(--ink); }
+  html.dark nav { background: rgba(20,20,20,0.88); border-bottom-color: var(--ink-20); }
+  html.dark .features { background: #0D0D0D; }
+  html.dark .form-card { background: #1E1E1E; border-color: var(--ink-20); }
+  html.dark .form-group input { background: #2A2A2A; border-color: var(--ink-20); color: var(--ink); }
+  html.dark .form-group input:focus { background: #2E2E2E; }
+  html.dark .role-option label { background: #2A2A2A; border-color: var(--ink-20); color: var(--ink-60); }
+  html.dark .role-option input:checked + label { background: rgba(227,35,80,0.12); }
+  html.dark footer { background: #0D0D0D; }
+  html.dark .coming-soon { color: var(--ink); }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overscroll-behavior-x: none;
+    position: relative;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(251,248,243,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ink-20);
+  }
+  nav .nav-logo svg { height: 28px; width: auto; }
+  nav .nav-cta {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  nav .nav-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Big red diagonal stripe */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -15%;
+    width: 55%;
+    height: 130%;
+    background: var(--red);
+    transform: skewX(-8deg);
+    opacity: 0.05;
+    z-index: 0;
+    border-radius: 0 0 0 80px;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 1.8s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  /* LOGO */
+  .hero-logo {
+    width: min(680px, 90vw);
+    margin: 0 auto 28px;
+    animation: fadeUp 0.7s 0.1s ease both;
+    filter: drop-shadow(0 8px 40px rgba(227,35,80,0.12));
+  }
+
+  .hero-tagline {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-tagline .accent { color: var(--red); }
+
+  .coming-soon {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 48px;
+    animation: fadeUp 0.7s 0.3s ease both;
+    position: relative;
+  }
+  .coming-soon::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: var(--red);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-60);
+    max-width: 480px;
+    margin: 0 auto 56px;
+    line-height: 1.7;
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+
+  /* Scroll cue */
+  .scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: fadeUp 1s 0.8s ease both;
+    z-index: 1;
+  }
+  .scroll-cue span { font-size: 11px; letter-spacing: 0.1em; color: var(--ink-60); text-transform: uppercase; }
+  .scroll-cue .arrow {
+    width: 24px; height: 24px;
+    border-right: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    transform: rotate(45deg);
+    animation: bounce 1.5s ease infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(4px); }
+  }
+
+  /* ── FEATURE STRIP ── */
+  .features {
+    background: var(--ink);
+    color: white;
+    padding: 64px 48px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .features::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -80px;
+    width: 300px; height: 300px;
+    background: var(--red);
+    border-radius: 50%;
+    opacity: 0.1;
+    filter: blur(60px);
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .feat-item {
+    position: relative;
+    padding-left: 20px;
+  }
+  .feat-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 4px;
+    width: 3px; height: 36px;
+    background: var(--red);
+    border-radius: 2px;
+  }
+  .feat-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+  .feat-item p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── EARLY BIRD SECTION ── */
+  .early-bird {
+    padding: 100px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ink-20);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 72px);
+    letter-spacing: 0.03em;
+    line-height: 0.95;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .section-title .outline {
+    -webkit-text-stroke: 2px var(--red);
+    color: transparent;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--ink-60);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 500px;
+  }
+
+  /* FORM */
+  .form-card {
+    background: white;
+    border-radius: 24px;
+    padding: 48px;
+    border: 1px solid var(--ink-20);
+    box-shadow: 0 24px 80px rgba(35,35,35,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), #ff6b6b);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 14px 18px;
+    border: 1.5px solid var(--ink-20);
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(227,35,80,0.1);
+    background: white;
+  }
+  .form-group input::placeholder { color: rgba(35,35,35,0.3); }
+
+  /* Role toggle */
+  .role-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .role-option {
+    position: relative;
+  }
+  .role-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .role-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border: 1.5px solid var(--ink-20);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-60);
+    text-transform: none;
+    letter-spacing: 0;
+    background: var(--cream);
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .role-option label .icon {
+    flex-shrink: 0;
+    color: inherit;
+    stroke: currentColor;
+  }
+  .role-option input:checked + label {
+    border-color: var(--red);
+    background: rgba(227,35,80,0.06);
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 18px 32px;
+    background: var(--red);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .submit-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(227,35,80,0.35);
+  }
+  .submit-btn:active { transform: translateY(0); }
+
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-60);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  /* Success state */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .success-state .check {
+    width: 72px; height: 72px;
+    background: rgba(227,35,80,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: var(--red);
+  }
+  .success-state h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .success-state p { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+
+  /* ── SOCIAL PROOF ── */
+  .social-strip {
+    background: white;
+    border-top: 1px solid var(--ink-20);
+    border-bottom: 1px solid var(--ink-20);
+    padding: 40px 48px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .social-strip p {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    margin-bottom: 24px;
+  }
+  .counter-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .counter-item .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .counter-item .num span { color: var(--red); }
+  .counter-item .lbl {
+    font-size: 12px;
+    color: var(--ink-60);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 13px;
+    position: relative;
+    z-index: 1;
+  }
+  footer .footer-logo {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer-logo svg {
+    height: 24px; width: auto;
+    opacity: 0.6;
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 14px 16px; padding-top: max(14px, env(safe-area-inset-top)); }
+    nav .nav-cta { padding: 9px 18px; font-size: 13px; }
+    .hero { padding: 100px 20px 64px; }
+    .features { padding: 48px 20px; }
+    .features-grid { gap: 32px; }
+    .form-card { padding: 28px 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .early-bird { padding: 56px 20px; }
+    .counter-row { gap: 32px; }
+    .social-strip { padding: 36px 20px; }
+  }
+
+  @media (max-width: 380px) {
+    .role-toggle { grid-template-columns: 1fr; }
+    .role-option label { padding: 14px 16px; }
+    .counter-row { gap: 24px; }
+    .theme-toggle { margin-right: 10px; }
+    nav .nav-cta { padding: 8px 14px; font-size: 12.5px; }
+    .form-card { padding: 24px 16px; }
+  }
+
+  /* ── DARK TOGGLE ── */
+  .nav-right { display: flex; align-items: center; gap: 0; }
+  .theme-toggle {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    flex-shrink: 0;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  .theme-toggle input {
+    opacity: 0;
+    width: 0; height: 0;
+    position: absolute;
+  }
+  .toggle-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: #E8E4DC;
+    border: 1.5px solid rgba(35,35,35,0.15);
+    transition: background 0.45s cubic-bezier(0.4,0,0.2,1), border-color 0.45s;
+    overflow: hidden;
+  }
+  html.dark .toggle-track {
+    background: #252525;
+    border-color: rgba(255,255,255,0.08);
+  }
+  .toggle-track .stars {
+    position: absolute;
+    right: 7px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 7px; letter-spacing: 1px;
+    color: rgba(255,255,255,0.35);
+    opacity: 0;
+    transition: opacity 0.3s 0.1s;
+    pointer-events: none;
+  }
+  html.dark .toggle-track .stars { opacity: 1; }
+  .toggle-track .suns {
+    position: absolute;
+    left: 7px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 7px; letter-spacing: 1px;
+    color: rgba(180,130,0,0.45);
+    opacity: 1;
+    transition: opacity 0.3s 0.1s;
+    pointer-events: none;
+  }
+  html.dark .toggle-track .suns { opacity: 0; }
+  .toggle-thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.18);
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1),
+                background 0.45s,
+                box-shadow 0.45s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; line-height: 1;
+    z-index: 1;
+    user-select: none;
+  }
+  html.dark .toggle-thumb {
+    transform: translateX(24px);
+    background: var(--red);
+    box-shadow: 0 1px 8px rgba(227,35,80,0.45);
+  }
+  .toggle-thumb .icon-sun  { display: block; }
+  .toggle-thumb .icon-moon { display: none; }
+  html.dark .toggle-thumb .icon-sun  { display: none; }
+  html.dark .toggle-thumb .icon-moon { display: block; }
+  /* smooth page transition */
+  html { transition: background 0.4s, color 0.4s; }
+  body, nav, .form-card, .features, footer {
+    transition: background 0.4s, border-color 0.4s, color 0.4s;
+  }
+
+
+  /* ── SVG LOGO DARK MODE ── */
+  .logo-ink { fill: rgb(35,35,35); transition: fill 0.4s; }
+  html.dark .logo-ink { fill: #FFFFFF; }
+  .logo-ink-muted { fill: rgba(255,255,255,0.5); transition: fill 0.4s; }
+  html.dark .logo-ink-muted { fill: #FFFFFF; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 2048 734" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgb(227,35,80)" d="M 410.692 83.0259 C 434.419 84.4685 473.935 82.698 499.434 82.8247 C 500.093 90.4104 500.302 98.0285 500.061 105.639 C 515.079 106.159 521.665 108.563 535.654 110.499 C 572.786 115.637 601.182 123.846 639.038 125.471 C 639.503 160.198 628.537 181.799 625.391 211.829 C 622.789 211.656 619.806 211.507 617.233 211.119 C 585.533 206.339 553.632 203.144 522.019 197.751 C 514.704 196.503 507.724 195.244 500.305 194.805 C 498.04 240.29 499.955 298.951 500.017 345.292 C 500.125 426.467 498.973 509.519 500.168 590.505 C 471.291 592.857 439.705 590.86 410.438 592.043 L 409.883 313.052 L 409.786 243.782 C 409.58 224.208 408.622 207.69 409.96 187.952 C 399.303 186.094 383.157 186.745 372.226 186.682 C 330.887 186.442 299.47 192.55 260.304 204.747 C 248.196 208.4 240.049 214.085 229.179 221.711 C 194.215 246.243 203.083 291.32 207.488 327.672 C 210.726 339.96 216.447 352.247 220.948 363.912 C 238.761 410.066 264.824 453.561 291.912 494.819 C 297.995 504.085 323.06 534.769 322.252 543.374 C 320.897 545.612 317.678 549.145 315.436 550.559 C 294.827 563.555 275.139 580.111 255.197 593.609 C 243.438 581.84 225.242 553.52 215.497 538.334 C 167.863 464.099 120.848 379.353 114.256 289.753 C 112.366 247.869 123.217 206.575 149.874 174.008 C 181.859 134.933 241.713 113.821 290.473 106.459 C 326.865 100.964 372.834 103.292 410.279 100.706 C 410.192 94.8968 410.488 88.852 410.692 83.0259 z"/>
+      <path class="logo-ink" d="M 1736.95 319.414 L 1737.61 319.336 C 1765.03 316.331 1806.26 324.087 1828.35 341.332 C 1863.24 368.584 1861.89 407.684 1861.87 447.547 L 1861.79 536.598 C 1861.79 549.52 1861.22 573.344 1862.57 585.203 C 1839.97 584.461 1816.64 585.527 1793.64 584.793 L 1792.02 568.397 C 1788.16 570.58 1784.27 572.685 1780.33 574.709 C 1740.19 595.345 1687.78 597.514 1650.61 568.888 C 1639.88 560.629 1633.49 550.119 1627.44 538.28 C 1620.04 522.927 1618.95 501.367 1624.83 485.645 C 1645.14 431.395 1703.56 427.606 1752.97 431.327 C 1768.36 432.487 1778.08 434.301 1792.1 439.083 C 1801.64 350.466 1709.58 376.675 1659.47 396.955 C 1648.12 380.755 1641.47 365.468 1633.86 347.379 C 1663.39 331.413 1703.61 321.888 1736.95 319.414 z M 1749.7 538.377 C 1767.82 534.439 1778.14 533.615 1792.99 522.572 C 1792.94 510.96 1793.22 497.225 1792.62 485.783 C 1776.3 479.248 1749.9 472.889 1732.33 475.386 C 1666.78 481.004 1677.09 547.758 1748.98 538.476 L 1749.7 538.377 z"/>
+      <path class="logo-ink" d="M 635.887 319.416 C 638.135 319.244 640.385 319.116 642.637 319.033 C 673.539 317.912 709.282 324.789 733.131 346.229 C 767.239 376.891 758.898 416.497 759.835 457.788 C 760.783 499.599 758.584 543.088 760.07 585.376 C 739.264 584.401 714.293 585.206 692.824 584.893 L 691.737 569.659 C 683.494 572.157 674.084 577.579 665.85 580.977 C 618.868 600.362 548.804 590.557 527.16 539.034 C 520.352 521.849 519.185 506.717 523.934 488.728 C 541.742 421.261 638.315 423.49 692.327 438.806 C 692.885 402.499 683.893 380.385 643.3 376.695 C 612.06 373.855 584.7 390.742 555.233 396.558 C 548.446 378.717 538.847 364.054 532.092 346.882 C 565.463 331.794 599.155 322.218 635.887 319.416 z M 649.834 538.256 C 665.727 534.485 679.04 532.084 692.608 522.289 C 692.342 510.16 692.205 498.028 692.198 485.896 C 673.761 478.931 652.532 473.589 632.593 475.364 C 567.634 480.956 575.578 546.547 648.025 538.497 C 648.629 538.429 649.233 538.349 649.834 538.256 z"/>
+      <path class="logo-ink" d="M 884.693 319.423 C 916.319 317.343 952.174 322.5 977.951 342.102 C 1011.99 367.982 1008.63 407.353 1008.54 445.368 L 1008.3 536.846 C 1008.28 549.703 1007.58 573.096 1008.88 585.29 C 988.405 584.188 963.762 585.439 942.373 584.723 L 940.835 569.585 C 932.54 572.939 924.436 577.286 916.077 580.756 C 868.607 600.465 797.56 591.138 775.927 538.767 C 746.364 427.874 865.695 418.201 942.404 438.974 C 941.437 422.978 942.074 404.365 930.686 392.477 C 905.472 366.154 861.46 377.097 831.642 388.711 C 826.095 390.872 811.572 396.226 806.837 395.925 C 801.935 393.245 785.399 356.151 781.272 347.821 C 812.477 331.304 849.422 321.766 884.693 319.423 z M 840.869 524.761 C 854.852 536.851 881.809 541.994 899.595 537.811 C 945.302 527.736 942.394 530.421 941.095 486.267 C 923.384 478.707 898.965 473.253 879.661 475.355 C 849.382 478.325 830.132 492.122 840.869 524.761 z"/>
+      <path class="logo-ink" d="M 1456.22 220.335 C 1456.56 220.479 1457.84 221.797 1457.83 221.961 C 1457.37 227.536 1457.42 243.996 1457.43 248.367 L 1457.56 366.385 C 1457.55 386.559 1456.69 412.818 1457.86 432.369 C 1465.37 426.876 1480.28 411.803 1487.67 404.683 L 1543.87 350.092 C 1550.42 343.697 1563.97 329.383 1571.08 325.325 C 1592.48 323.661 1626.01 324.476 1647.76 325.352 C 1640.01 332.196 1630.32 342.671 1622.76 350.169 L 1577.12 395.364 C 1560.7 411.797 1543.9 426.315 1527.38 443.553 C 1562.82 481.077 1597.92 522.576 1633.68 559.341 C 1641.91 569.579 1647.51 574.853 1657.01 583.797 C 1642.51 585.578 1585.61 585.759 1569.72 584.593 C 1559.44 577.449 1550.63 565.488 1541.93 556.167 C 1529.32 542.655 1516.67 529.111 1504.02 515.628 C 1489.43 500.06 1474.56 480.149 1457.3 467.918 C 1457.59 503.909 1455.89 550.094 1457.81 585.106 C 1435.13 584.933 1412.44 584.986 1389.76 585.264 C 1390.94 468.972 1387.39 348.937 1390.17 233.251 C 1409.1 226.693 1435.38 224.74 1456.22 220.335 z"/>
+      <path class="logo-ink" d="M 1296 325.093 C 1313.34 323.342 1348.21 324.303 1366.97 324.342 C 1365.89 352.247 1366.89 388.102 1366.91 416.583 L 1366.92 525.439 C 1366.92 542.669 1366.12 568.89 1367.53 585.129 C 1344.14 584.562 1320.04 585.41 1296.34 584.916 C 1296.07 578.152 1296.05 573.938 1296.53 567.201 C 1292.02 569.767 1286.99 572.037 1282.61 574.617 C 1239.47 599.98 1186.53 595.2 1149.57 561.307 C 1120.26 534.698 1120.69 497.394 1120.34 461.065 C 1119.9 415.806 1120.95 370.357 1120.45 325.1 L 1134.63 324.52 C 1153 323.931 1172.63 325.464 1190.55 324.206 C 1191.73 376.089 1190.32 428.458 1191.18 480.358 C 1191.59 495.675 1194.14 504.317 1205.21 514.743 C 1232.82 540.741 1270.35 533.831 1295.25 506.569 C 1296.87 496.225 1296.14 458.498 1296.12 445.959 L 1296 325.093 z"/>
+      <path class="logo-ink" d="M 1096.1 220.193 C 1097.09 220.109 1097.88 220.43 1098.88 220.686 C 1105.36 233.609 1094.98 538.549 1100.92 585.228 C 1079.18 584.667 1055.62 585.128 1033.75 585.143 C 1032.4 584.912 1031.22 585.004 1030.55 584.07 C 1029.34 582.38 1029.22 576.315 1029.23 574.254 C 1029.39 501.876 1029.23 429.363 1029.17 356.991 L 1029.15 278.165 C 1029.15 265.634 1028.53 246.045 1029.76 234.087 C 1050.38 226.084 1074.8 226.305 1096.1 220.193 z"/>
+    </svg>
+  </div>
+  <div class="nav-right">
+    <label class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <input type="checkbox" id="theme-checkbox" onchange="toggleTheme(this)"/>
+      <div class="toggle-track">
+        <span class="stars">✦ ·</span>
+        <span class="suns">· ✦</span>
+      </div>
+      <div class="toggle-thumb">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </div>
+    </label>
+    <a href="#early-bird" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Launching Soon in Akole
+    </div>
+
+    <svg class="hero-logo" viewBox="0 0 2048 734" xmlns="http://www.w3.org/2000/svg">
+      <path fill="rgb(227,35,80)" d="M 410.692 83.0259 C 434.419 84.4685 473.935 82.698 499.434 82.8247 C 500.093 90.4104 500.302 98.0285 500.061 105.639 C 515.079 106.159 521.665 108.563 535.654 110.499 C 572.786 115.637 601.182 123.846 639.038 125.471 C 639.503 160.198 628.537 181.799 625.391 211.829 C 622.789 211.656 619.806 211.507 617.233 211.119 C 585.533 206.339 553.632 203.144 522.019 197.751 C 514.704 196.503 507.724 195.244 500.305 194.805 C 498.04 240.29 499.955 298.951 500.017 345.292 C 500.125 426.467 498.973 509.519 500.168 590.505 C 471.291 592.857 439.705 590.86 410.438 592.043 L 409.883 313.052 L 409.786 243.782 C 409.58 224.208 408.622 207.69 409.96 187.952 C 399.303 186.094 383.157 186.745 372.226 186.682 C 330.887 186.442 299.47 192.55 260.304 204.747 C 248.196 208.4 240.049 214.085 229.179 221.711 C 194.215 246.243 203.083 291.32 207.488 327.672 C 210.726 339.96 216.447 352.247 220.948 363.912 C 238.761 410.066 264.824 453.561 291.912 494.819 C 297.995 504.085 323.06 534.769 322.252 543.374 C 320.897 545.612 317.678 549.145 315.436 550.559 C 294.827 563.555 275.139 580.111 255.197 593.609 C 243.438 581.84 225.242 553.52 215.497 538.334 C 167.863 464.099 120.848 379.353 114.256 289.753 C 112.366 247.869 123.217 206.575 149.874 174.008 C 181.859 134.933 241.713 113.821 290.473 106.459 C 326.865 100.964 372.834 103.292 410.279 100.706 C 410.192 94.8968 410.488 88.852 410.692 83.0259 z"/>
+      <path class="logo-ink" d="M 1736.95 319.414 L 1737.61 319.336 C 1765.03 316.331 1806.26 324.087 1828.35 341.332 C 1863.24 368.584 1861.89 407.684 1861.87 447.547 L 1861.79 536.598 C 1861.79 549.52 1861.22 573.344 1862.57 585.203 C 1839.97 584.461 1816.64 585.527 1793.64 584.793 L 1792.02 568.397 C 1788.16 570.58 1784.27 572.685 1780.33 574.709 C 1740.19 595.345 1687.78 597.514 1650.61 568.888 C 1639.88 560.629 1633.49 550.119 1627.44 538.28 C 1620.04 522.927 1618.95 501.367 1624.83 485.645 C 1645.14 431.395 1703.56 427.606 1752.97 431.327 C 1768.36 432.487 1778.08 434.301 1792.1 439.083 C 1801.64 350.466 1709.58 376.675 1659.47 396.955 C 1648.12 380.755 1641.47 365.468 1633.86 347.379 C 1663.39 331.413 1703.61 321.888 1736.95 319.414 z M 1749.7 538.377 C 1767.82 534.439 1778.14 533.615 1792.99 522.572 C 1792.94 510.96 1793.22 497.225 1792.62 485.783 C 1776.3 479.248 1749.9 472.889 1732.33 475.386 C 1666.78 481.004 1677.09 547.758 1748.98 538.476 L 1749.7 538.377 z"/>
+      <path class="logo-ink" d="M 635.887 319.416 C 638.135 319.244 640.385 319.116 642.637 319.033 C 673.539 317.912 709.282 324.789 733.131 346.229 C 767.239 376.891 758.898 416.497 759.835 457.788 C 760.783 499.599 758.584 543.088 760.07 585.376 C 739.264 584.401 714.293 585.206 692.824 584.893 L 691.737 569.659 C 683.494 572.157 674.084 577.579 665.85 580.977 C 618.868 600.362 548.804 590.557 527.16 539.034 C 520.352 521.849 519.185 506.717 523.934 488.728 C 541.742 421.261 638.315 423.49 692.327 438.806 C 692.885 402.499 683.893 380.385 643.3 376.695 C 612.06 373.855 584.7 390.742 555.233 396.558 C 548.446 378.717 538.847 364.054 532.092 346.882 C 565.463 331.794 599.155 322.218 635.887 319.416 z M 649.834 538.256 C 665.727 534.485 679.04 532.084 692.608 522.289 C 692.342 510.16 692.205 498.028 692.198 485.896 C 673.761 478.931 652.532 473.589 632.593 475.364 C 567.634 480.956 575.578 546.547 648.025 538.497 C 648.629 538.429 649.233 538.349 649.834 538.256 z"/>
+      <path class="logo-ink" d="M 884.693 319.423 C 916.319 317.343 952.174 322.5 977.951 342.102 C 1011.99 367.982 1008.63 407.353 1008.54 445.368 L 1008.3 536.846 C 1008.28 549.703 1007.58 573.096 1008.88 585.29 C 988.405 584.188 963.762 585.439 942.373 584.723 L 940.835 569.585 C 932.54 572.939 924.436 577.286 916.077 580.756 C 868.607 600.465 797.56 591.138 775.927 538.767 C 746.364 427.874 865.695 418.201 942.404 438.974 C 941.437 422.978 942.074 404.365 930.686 392.477 C 905.472 366.154 861.46 377.097 831.642 388.711 C 826.095 390.872 811.572 396.226 806.837 395.925 C 801.935 393.245 785.399 356.151 781.272 347.821 C 812.477 331.304 849.422 321.766 884.693 319.423 z M 840.869 524.761 C 854.852 536.851 881.809 541.994 899.595 537.811 C 945.302 527.736 942.394 530.421 941.095 486.267 C 923.384 478.707 898.965 473.253 879.661 475.355 C 849.382 478.325 830.132 492.122 840.869 524.761 z"/>
+      <path class="logo-ink" d="M 1456.22 220.335 C 1456.56 220.479 1457.84 221.797 1457.83 221.961 C 1457.37 227.536 1457.42 243.996 1457.43 248.367 L 1457.56 366.385 C 1457.55 386.559 1456.69 412.818 1457.86 432.369 C 1465.37 426.876 1480.28 411.803 1487.67 404.683 L 1543.87 350.092 C 1550.42 343.697 1563.97 329.383 1571.08 325.325 C 1592.48 323.661 1626.01 324.476 1647.76 325.352 C 1640.01 332.196 1630.32 342.671 1622.76 350.169 L 1577.12 395.364 C 1560.7 411.797 1543.9 426.315 1527.38 443.553 C 1562.82 481.077 1597.92 522.576 1633.68 559.341 C 1641.91 569.579 1647.51 574.853 1657.01 583.797 C 1642.51 585.578 1585.61 585.759 1569.72 584.593 C 1559.44 577.449 1550.63 565.488 1541.93 556.167 C 1529.32 542.655 1516.67 529.111 1504.02 515.628 C 1489.43 500.06 1474.56 480.149 1457.3 467.918 C 1457.59 503.909 1455.89 550.094 1457.81 585.106 C 1435.13 584.933 1412.44 584.986 1389.76 585.264 C 1390.94 468.972 1387.39 348.937 1390.17 233.251 C 1409.1 226.693 1435.38 224.74 1456.22 220.335 z"/>
+      <path class="logo-ink" d="M 1296 325.093 C 1313.34 323.342 1348.21 324.303 1366.97 324.342 C 1365.89 352.247 1366.89 388.102 1366.91 416.583 L 1366.92 525.439 C 1366.92 542.669 1366.12 568.89 1367.53 585.129 C 1344.14 584.562 1320.04 585.41 1296.34 584.916 C 1296.07 578.152 1296.05 573.938 1296.53 567.201 C 1292.02 569.767 1286.99 572.037 1282.61 574.617 C 1239.47 599.98 1186.53 595.2 1149.57 561.307 C 1120.26 534.698 1120.69 497.394 1120.34 461.065 C 1119.9 415.806 1120.95 370.357 1120.45 325.1 L 1134.63 324.52 C 1153 323.931 1172.63 325.464 1190.55 324.206 C 1191.73 376.089 1190.32 428.458 1191.18 480.358 C 1191.59 495.675 1194.14 504.317 1205.21 514.743 C 1232.82 540.741 1270.35 533.831 1295.25 506.569 C 1296.87 496.225 1296.14 458.498 1296.12 445.959 L 1296 325.093 z"/>
+      <path class="logo-ink" d="M 1096.1 220.193 C 1097.09 220.109 1097.88 220.43 1098.88 220.686 C 1105.36 233.609 1094.98 538.549 1100.92 585.228 C 1079.18 584.667 1055.62 585.128 1033.75 585.143 C 1032.4 584.912 1031.22 585.004 1030.55 584.07 C 1029.34 582.38 1029.22 576.315 1029.23 574.254 C 1029.39 501.876 1029.23 429.363 1029.17 356.991 L 1029.15 278.165 C 1029.15 265.634 1028.53 246.045 1029.76 234.087 C 1050.38 226.084 1074.8 226.305 1096.1 220.193 z"/>
+    </svg>
+
+    <p class="hero-tagline">
+      <span class="accent">आपल्या तालुक्याचे</span> आपले ॲप
+    </p>
+
+    <div class="coming-soon">COMING SOON</div>
+
+    <p class="hero-sub">
+      The first digital platform for <em>Akole</em> <strong>Taaluka</strong>,<br/>
+      bringing together people, local businesses, essential services, events, and community updates <strong>all in one place</strong>.
+    </p>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<section class="features">
+  <div class="features-grid">
+    <div class="feat-item reveal">
+      <h3>Local Business Directory</h3>
+      <p>Discover every shop, service, event, and deals in our taaluka at fingertips - all in one place.</p>
+    </div>
+    <div class="feat-item reveal">
+      <h3>Community First</h3>
+      <p>Making everyday life easier by connecting information, resources, benefits, & updates.</p>
+    </div>
+    <div class="feat-item reveal">
+      <h3>Rooted in Akole</h3>
+      <p>Crafted and Developed by Akolekar for the people of Akole taaluka with pride.</p>
+    </div>
+    <div class="feat-item reveal">
+      <h3>Grow Your Business</h3>
+      <p>Reach thousands of local customers who are already looking for what you offer.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- EARLY BIRD FORM -->
+<section class="early-bird" id="early-bird">
+  <p class="section-label reveal">Be the First User</p>
+  <h2 class="section-title reveal">
+    Join The Vibe<br><span class="outline">Of Taaluka</span>
+  </h2>
+  <p class="section-desc reveal">
+    Join our early bird list. Get priority access, explore, guide us and help shape Taaluka for your community.
+  </p>
+
+  <div class="form-card reveal">
+    <form id="early-bird-form" name="early-bird" method="POST" data-netlify="true" netlify>
+      <input type="hidden" name="form-name" value="early-bird"/>
+      <div id="form-content">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="name" placeholder="आपले नाव / Your name" autocomplete="name" pattern="[A-Za-z\u0900-\u097F\s]+" title="Name should contain letters only" required/>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="98765 43210" maxlength="10" pattern="[0-9]{10}" title="Enter a 10-digit mobile number without country code" autocomplete="tel" required/>
+          </div>
+          <div class="form-group full">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required/>
+          </div>
+          <div class="form-group full">
+            <label>I am a</label>
+            <div class="role-toggle">
+              <div class="role-option">
+                <input type="radio" name="role" id="role-user" value="user" checked required/>
+                <label for="role-user">
+                  <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Regular User
+                </label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="role" id="role-biz" value="business" required/>
+                <label for="role-biz">
+                  <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
+                  Business Owner
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="submit-btn" type="submit">Join As First User</button>
+      </div>
+    </form>
+
+    <div class="success-state" id="success-state">
+      <div class="check">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h3>You're on the list!</h3>
+      <p>Vibe matched...!  Welcome to the Taaluka family. We'll be in touch soon.<br/>
+      <strong style="color:var(--red)">आपले स्वागत आहे!</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg viewBox="0 0 2048 734" xmlns="http://www.w3.org/2000/svg">
+      <path fill="white" d="M 410.692 83.0259 C 434.419 84.4685 473.935 82.698 499.434 82.8247 C 500.093 90.4104 500.302 98.0285 500.061 105.639 C 515.079 106.159 521.665 108.563 535.654 110.499 C 572.786 115.637 601.182 123.846 639.038 125.471 C 639.503 160.198 628.537 181.799 625.391 211.829 C 622.789 211.656 619.806 211.507 617.233 211.119 C 585.533 206.339 553.632 203.144 522.019 197.751 C 514.704 196.503 507.724 195.244 500.305 194.805 C 498.04 240.29 499.955 298.951 500.017 345.292 C 500.125 426.467 498.973 509.519 500.168 590.505 C 471.291 592.857 439.705 590.86 410.438 592.043 L 409.883 313.052 L 409.786 243.782 C 409.58 224.208 408.622 207.69 409.96 187.952 C 399.303 186.094 383.157 186.745 372.226 186.682 C 330.887 186.442 299.47 192.55 260.304 204.747 C 248.196 208.4 240.049 214.085 229.179 221.711 C 194.215 246.243 203.083 291.32 207.488 327.672 C 210.726 339.96 216.447 352.247 220.948 363.912 C 238.761 410.066 264.824 453.561 291.912 494.819 C 297.995 504.085 323.06 534.769 322.252 543.374 C 320.897 545.612 317.678 549.145 315.436 550.559 C 294.827 563.555 275.139 580.111 255.197 593.609 C 243.438 581.84 225.242 553.52 215.497 538.334 C 167.863 464.099 120.848 379.353 114.256 289.753 C 112.366 247.869 123.217 206.575 149.874 174.008 C 181.859 134.933 241.713 113.821 290.473 106.459 C 326.865 100.964 372.834 103.292 410.279 100.706 C 410.192 94.8968 410.488 88.852 410.692 83.0259 z"/>
+      <path class="logo-ink-muted" d="M 1736.95 319.414 L 1737.61 319.336 C 1765.03 316.331 1806.26 324.087 1828.35 341.332 C 1863.24 368.584 1861.89 407.684 1861.87 447.547 L 1861.79 536.598 C 1861.79 549.52 1861.22 573.344 1862.57 585.203 C 1839.97 584.461 1816.64 585.527 1793.64 584.793 L 1792.02 568.397 C 1788.16 570.58 1784.27 572.685 1780.33 574.709 C 1740.19 595.345 1687.78 597.514 1650.61 568.888 C 1639.88 560.629 1633.49 550.119 1627.44 538.28 C 1620.04 522.927 1618.95 501.367 1624.83 485.645 C 1645.14 431.395 1703.56 427.606 1752.97 431.327 C 1768.36 432.487 1778.08 434.301 1792.1 439.083 C 1801.64 350.466 1709.58 376.675 1659.47 396.955 C 1648.12 380.755 1641.47 365.468 1633.86 347.379 C 1663.39 331.413 1703.61 321.888 1736.95 319.414 z M 1749.7 538.377 C 1767.82 534.439 1778.14 533.615 1792.99 522.572 C 1792.94 510.96 1793.22 497.225 1792.62 485.783 C 1776.3 479.248 1749.9 472.889 1732.33 475.386 C 1666.78 481.004 1677.09 547.758 1748.98 538.476 L 1749.7 538.377 z"/>
+      <path class="logo-ink-muted" d="M 635.887 319.416 C 638.135 319.244 640.385 319.116 642.637 319.033 C 673.539 317.912 709.282 324.789 733.131 346.229 C 767.239 376.891 758.898 416.497 759.835 457.788 C 760.783 499.599 758.584 543.088 760.07 585.376 C 739.264 584.401 714.293 585.206 692.824 584.893 L 691.737 569.659 C 683.494 572.157 674.084 577.579 665.85 580.977 C 618.868 600.362 548.804 590.557 527.16 539.034 C 520.352 521.849 519.185 506.717 523.934 488.728 C 541.742 421.261 638.315 423.49 692.327 438.806 C 692.885 402.499 683.893 380.385 643.3 376.695 C 612.06 373.855 584.7 390.742 555.233 396.558 C 548.446 378.717 538.847 364.054 532.092 346.882 C 565.463 331.794 599.155 322.218 635.887 319.416 z M 649.834 538.256 C 665.727 534.485 679.04 532.084 692.608 522.289 C 692.342 510.16 692.205 498.028 692.198 485.896 C 673.761 478.931 652.532 473.589 632.593 475.364 C 567.634 480.956 575.578 546.547 648.025 538.497 C 648.629 538.429 649.233 538.349 649.834 538.256 z"/>
+      <path class="logo-ink-muted" d="M 884.693 319.423 C 916.319 317.343 952.174 322.5 977.951 342.102 C 1011.99 367.982 1008.63 407.353 1008.54 445.368 L 1008.3 536.846 C 1008.28 549.703 1007.58 573.096 1008.88 585.29 C 988.405 584.188 963.762 585.439 942.373 584.723 L 940.835 569.585 C 932.54 572.939 924.436 577.286 916.077 580.756 C 868.607 600.465 797.56 591.138 775.927 538.767 C 746.364 427.874 865.695 418.201 942.404 438.974 C 941.437 422.978 942.074 404.365 930.686 392.477 C 905.472 366.154 861.46 377.097 831.642 388.711 C 826.095 390.872 811.572 396.226 806.837 395.925 C 801.935 393.245 785.399 356.151 781.272 347.821 C 812.477 331.304 849.422 321.766 884.693 319.423 z M 840.869 524.761 C 854.852 536.851 881.809 541.994 899.595 537.811 C 945.302 527.736 942.394 530.421 941.095 486.267 C 923.384 478.707 898.965 473.253 879.661 475.355 C 849.382 478.325 830.132 492.122 840.869 524.761 z"/>
+      <path class="logo-ink-muted" d="M 1456.22 220.335 C 1456.56 220.479 1457.84 221.797 1457.83 221.961 C 1457.37 227.536 1457.42 243.996 1457.43 248.367 L 1457.56 366.385 C 1457.55 386.559 1456.69 412.818 1457.86 432.369 C 1465.37 426.876 1480.28 411.803 1487.67 404.683 L 1543.87 350.092 C 1550.42 343.697 1563.97 329.383 1571.08 325.325 C 1592.48 323.661 1626.01 324.476 1647.76 325.352 C 1640.01 332.196 1630.32 342.671 1622.76 350.169 L 1577.12 395.364 C 1560.7 411.797 1543.9 426.315 1527.38 443.553 C 1562.82 481.077 1597.92 522.576 1633.68 559.341 C 1641.91 569.579 1647.51 574.853 1657.01 583.797 C 1642.51 585.578 1585.61 585.759 1569.72 584.593 C 1559.44 577.449 1550.63 565.488 1541.93 556.167 C 1529.32 542.655 1516.67 529.111 1504.02 515.628 C 1489.43 500.06 1474.56 480.149 1457.3 467.918 C 1457.59 503.909 1455.89 550.094 1457.81 585.106 C 1435.13 584.933 1412.44 584.986 1389.76 585.264 C 1390.94 468.972 1387.39 348.937 1390.17 233.251 C 1409.1 226.693 1435.38 224.74 1456.22 220.335 z"/>
+      <path class="logo-ink-muted" d="M 1296 325.093 C 1313.34 323.342 1348.21 324.303 1366.97 324.342 C 1365.89 352.247 1366.89 388.102 1366.91 416.583 L 1366.92 525.439 C 1366.92 542.669 1366.12 568.89 1367.53 585.129 C 1344.14 584.562 1320.04 585.41 1296.34 584.916 C 1296.07 578.152 1296.05 573.938 1296.53 567.201 C 1292.02 569.767 1286.99 572.037 1282.61 574.617 C 1239.47 599.98 1186.53 595.2 1149.57 561.307 C 1120.26 534.698 1120.69 497.394 1120.34 461.065 C 1119.9 415.806 1120.95 370.357 1120.45 325.1 L 1134.63 324.52 C 1153 323.931 1172.63 325.464 1190.55 324.206 C 1191.73 376.089 1190.32 428.458 1191.18 480.358 C 1191.59 495.675 1194.14 504.317 1205.21 514.743 C 1232.82 540.741 1270.35 533.831 1295.25 506.569 C 1296.87 496.225 1296.14 458.498 1296.12 445.959 L 1296 325.093 z"/>
+      <path class="logo-ink-muted" d="M 1096.1 220.193 C 1097.09 220.109 1097.88 220.43 1098.88 220.686 C 1105.36 233.609 1094.98 538.549 1100.92 585.228 C 1079.18 584.667 1055.62 585.128 1033.75 585.143 C 1032.4 584.912 1031.22 585.004 1030.55 584.07 C 1029.34 582.38 1029.22 576.315 1029.23 574.254 C 1029.39 501.876 1029.23 429.363 1029.17 356.991 L 1029.15 278.165 C 1029.15 265.634 1028.53 246.045 1029.76 234.087 C 1050.38 226.084 1074.8 226.305 1096.1 220.193 z"/>
+    </svg>
+  </div>
+  <p>© 2026 Taaluka. Made with ❤️ for Akole.</p>
+  <p style="margin-top:8px; font-size:11px; opacity:0.4;">आपल्या तालुक्याचे आपले ॲप</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Form submit — validates, then posts to Netlify Forms via AJAX
+  function encodeFormData(form) {
+    return new URLSearchParams(new FormData(form)).toString();
+  }
+
+  document.getElementById('early-bird-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const name = document.getElementById('fname').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const roleSelected = document.querySelector('input[name="role"]:checked');
+
+    const namePattern = /^[A-Za-z\u0900-\u097F\s]+$/;
+    const mobilePattern = /^[0-9]{10}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!namePattern.test(name)) { alert('Name should contain letters only (no numbers or symbols).'); return; }
+    if (!mobile) { alert('Please enter your mobile number.'); return; }
+    if (!mobilePattern.test(mobile)) { alert('Please enter a valid 10-digit mobile number without the country code.'); return; }
+    if (!email) { alert('Please enter your email address.'); return; }
+    if (!emailPattern.test(email)) { alert('Please enter a valid email address.'); return; }
+    if (!roleSelected) { alert('Please select whether you are a regular user or a business owner.'); return; }
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeFormData(form)
+    })
+      .then(() => {
+        document.getElementById('form-content').style.display = 'none';
+        const s = document.getElementById('success-state');
+        s.style.display = 'block';
+        s.style.animation = 'fadeUp 0.6s ease both';
+      })
+      .catch(() => {
+        alert('Something went wrong submitting the form. Please try again.');
+      });
+  });
+
+  // Dark mode toggle
+  function toggleTheme(cb) {
+    document.documentElement.classList.toggle('dark', cb.checked);
+    localStorage.setItem('taaluka-theme', cb.checked ? 'dark' : 'light');
+  }
+  // Restore saved preference
+  (function() {
+    const saved = localStorage.getItem('taaluka-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      const cb = document.getElementById('theme-checkbox');
+      if (cb) cb.checked = true;
+    }
+  })();
+
+  // Mobile number: digits only, exactly 10 digits, no country code
+  document.getElementById('mobile').addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+  });
+
+  // Full name: letters only (English + Marathi), no numbers or symbols
+  document.getElementById('fname').addEventListener('input', function() {
+    this.value = this.value.replace(/[^A-Za-z\u0900-\u097F\s]/g, '');
+  });
+</script>
+</body>
+</html>
