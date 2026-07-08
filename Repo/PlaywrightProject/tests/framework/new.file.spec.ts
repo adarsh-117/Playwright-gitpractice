@@ -7,3 +7,11 @@ test('newtestname' ,async({page}) =>{
     
 
 });
+
+test('newtestname1' ,async({page}) =>{
+
+    console.log("this is a new test");
+    
+
+});
+
