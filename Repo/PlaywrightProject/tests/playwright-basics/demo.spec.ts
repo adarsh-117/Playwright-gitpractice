@@ -20,3 +20,10 @@ test('verify taaluka title2', async ({ page }) => {
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Taaluka — आपल्या तालुक्याचे आपले ॲप/);
 });
+
+test('verify taaluka title3', async ({ page }) => {
+  await page.goto('https://taaluka.netlify.app/');
+
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/Taaluka — आपल्या तालुक्याचे आपले ॲप/);
+});
